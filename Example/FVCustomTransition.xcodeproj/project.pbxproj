@@ -12,6 +12,9 @@
 		AC0AF21E1DD58CDF00B087DA /* FVSlideTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF21D1DD58CDF00B087DA /* FVSlideTransitionAnimator.m */; };
 		AC0AF2231DD59C6100B087DA /* FVConfigOption.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF2221DD59C6100B087DA /* FVConfigOption.m */; };
 		AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF2251DD5A65700B087DA /* FVViewController.m */; };
+		AC0AF2281DD5C44F00B087DA /* OptionsSB.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */; };
+		AC0AF22B1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF22A1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m */; };
+		AC0AF22E1DD5D2F000B087DA /* FVCofigOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF22D1DD5D2F000B087DA /* FVCofigOptionViewController.m */; };
 		AC2EBA4E1DD5595D0058D302 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EBA4D1DD5595D0058D302 /* main.m */; };
 		AC2EBA571DD5595D0058D302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA551DD5595D0058D302 /* Main.storyboard */; };
 		AC2EBA591DD5595D0058D302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA581DD5595D0058D302 /* Assets.xcassets */; };
@@ -31,6 +34,11 @@
 		AC0AF2221DD59C6100B087DA /* FVConfigOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVConfigOption.m; sourceTree = "<group>"; };
 		AC0AF2241DD5A65700B087DA /* FVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVViewController.h; sourceTree = "<group>"; };
 		AC0AF2251DD5A65700B087DA /* FVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVViewController.m; sourceTree = "<group>"; };
+		AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OptionsSB.storyboard; sourceTree = "<group>"; };
+		AC0AF2291DD5CD2500B087DA /* FVOptionsTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVOptionsTransitionAnimator.h; sourceTree = "<group>"; };
+		AC0AF22A1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVOptionsTransitionAnimator.m; sourceTree = "<group>"; };
+		AC0AF22C1DD5D2F000B087DA /* FVCofigOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVCofigOptionViewController.h; sourceTree = "<group>"; };
+		AC0AF22D1DD5D2F000B087DA /* FVCofigOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVCofigOptionViewController.m; sourceTree = "<group>"; };
 		AC2EBA491DD5595D0058D302 /* FVCustomTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FVCustomTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2EBA4D1DD5595D0058D302 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC2EBA561DD5595D0058D302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +66,8 @@
 			children = (
 				AC0AF2151DD5884000B087DA /* FVSlideViewController.h */,
 				AC0AF2161DD5884000B087DA /* FVSlideViewController.m */,
+				AC0AF22C1DD5D2F000B087DA /* FVCofigOptionViewController.h */,
+				AC0AF22D1DD5D2F000B087DA /* FVCofigOptionViewController.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -69,6 +79,8 @@
 				AC0AF21A1DD5898E00B087DA /* FVBaseTransitionAnimator.m */,
 				AC0AF21C1DD58CDF00B087DA /* FVSlideTransitionAnimator.h */,
 				AC0AF21D1DD58CDF00B087DA /* FVSlideTransitionAnimator.m */,
+				AC0AF2291DD5CD2500B087DA /* FVOptionsTransitionAnimator.h */,
+				AC0AF22A1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m */,
 			);
 			path = animators;
 			sourceTree = "<group>";
@@ -103,6 +115,7 @@
 			children = (
 				AC0AF2241DD5A65700B087DA /* FVViewController.h */,
 				AC0AF2251DD5A65700B087DA /* FVViewController.m */,
+				AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */,
 				AC0AF2201DD59C3900B087DA /* configData */,
 				AC0AF2181DD5892C00B087DA /* animators */,
 				AC0AF2141DD5881400B087DA /* class */,
@@ -186,6 +199,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC2EBA5C1DD5595D0058D302 /* LaunchScreen.storyboard in Resources */,
+				AC0AF2281DD5C44F00B087DA /* OptionsSB.storyboard in Resources */,
 				AC2EBA671DD55C260058D302 /* InitialDefaults.plist in Resources */,
 				AC2EBA591DD5595D0058D302 /* Assets.xcassets in Resources */,
 				AC2EBA571DD5595D0058D302 /* Main.storyboard in Resources */,
@@ -200,11 +214,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0AF2231DD59C6100B087DA /* FVConfigOption.m in Sources */,
+				AC0AF22E1DD5D2F000B087DA /* FVCofigOptionViewController.m in Sources */,
 				AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */,
 				AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */,
 				AC0AF21B1DD5898E00B087DA /* FVBaseTransitionAnimator.m in Sources */,
 				AC0AF2171DD5884000B087DA /* FVSlideViewController.m in Sources */,
 				AC2EBA4E1DD5595D0058D302 /* main.m in Sources */,
+				AC0AF22B1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m in Sources */,
 				AC0AF21E1DD58CDF00B087DA /* FVSlideTransitionAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -10,6 +10,8 @@
 #import "FVConfigOption.h"
 #import "FVSlideViewController.h"
 #import "FVSlideTransitionAnimator.h"
+#import "FVOptionsTransitionAnimator.h"
+#import "FVCofigOptionViewController.h"
 
 typedef NS_ENUM(NSInteger, TableViewSection){
     TableViewSectionBasic,
@@ -67,6 +69,13 @@ static NSString * const kSegueDropDismiss    = @"dropDismiss";
         animator.edge = option.edge;
         animationController = animator;
     }
+    else if ([presented isKindOfClass:[UINavigationController class]])
+    {
+        FVOptionsTransitionAnimator *animator = [[FVOptionsTransitionAnimator alloc] init];
+        animator.appearing = YES;
+        animator.duration = option.duration;
+        animationController = animator;
+    }
 
     return animationController;
 }
@@ -86,6 +95,17 @@ static NSString * const kSegueDropDismiss    = @"dropDismiss";
         animator.duration = option.duration;
         animator.edge = FVEdgeBottom;
         animationController = animator;
+    }
+    else if ([dismissed isKindOfClass:[UINavigationController class]])
+    {
+        if ([((UINavigationController *)dismissed).topViewController isKindOfClass:[FVCofigOptionViewController class]])
+        {
+            FVOptionsTransitionAnimator *animator = [[FVOptionsTransitionAnimator alloc] init];
+            animator.appearing = NO;
+            animator.duration = option.duration;
+            animationController = animator;
+        }
+    
     }
     
     return animationController;
@@ -159,6 +179,16 @@ static NSString * const kSegueDropDismiss    = @"dropDismiss";
     if ([sender.identifier isEqualToString:kSegueOptionsDismiss] || [sender.identifier isEqualToString:kSegueDropDismiss]) {
         [self dismissViewControllerAnimated:YES completion:nil];
     }
+}
+
+
+- (IBAction)animationOptionsConfig:(UIBarButtonItem *)sender
+{
+    UIStoryboard *optionSB = [UIStoryboard storyboardWithName:@"OptionsSB" bundle:nil];
+    UIViewController *optionVC = optionSB.instantiateInitialViewController;
+    optionVC.modalPresentationStyle = UIModalPresentationCustom;
+    optionVC.transitioningDelegate = self;
+    [self presentViewController:optionVC animated:YES completion:nil];
 }
 
 @end
