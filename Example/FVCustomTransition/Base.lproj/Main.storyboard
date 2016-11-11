@@ -12,7 +12,7 @@
         <!--Transitions-->
         <scene sceneID="JYj-bo-t2Y">
             <objects>
-                <tableViewController id="hUi-T7-Igy" customClass="FVTViewController" sceneMemberID="viewController">
+                <tableViewController id="hUi-T7-Igy" customClass="FVViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="20" sectionFooterHeight="20" id="Cbs-Ki-LgM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Transitions" id="KPM-2J-JPC"/>
                     <connections>
-                        <segue destination="TWd-EN-8Cd" kind="push" identifier="slidPush" id="9uZ-ly-ABj"/>
+                        <segue destination="TWd-EN-8Cd" kind="push" identifier="slidePush" id="9uZ-ly-ABj"/>
                         <segue destination="TWd-EN-8Cd" kind="modal" identifier="slideModal" id="et2-JL-6Eo"/>
                     </connections>
                 </tableViewController>
@@ -86,7 +86,7 @@
             </objects>
             <point key="canvasLocation" x="-108" y="-261.31934032983509"/>
         </scene>
-        <!--Slide View Controller-->
+        <!--CustomPushStyle-->
         <scene sceneID="B5u-os-1hO">
             <objects>
                 <viewController id="TWd-EN-8Cd" customClass="FVSlideViewController" sceneMemberID="viewController">
@@ -98,12 +98,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9eB-g8-nf2" appends="YES" id="xri-hj-SLd"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="54d-FU-M8p"/>
+                    <navigationItem key="navigationItem" title="CustomPushStyle" id="54d-FU-M8p"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rA2-gT-3F6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jIe-Hd-Qwj" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="9eB-g8-nf2">
+                    <connections>
+                        <segue destination="jIe-Hd-Qwj" kind="unwind" unwindAction="unwindToViewController:" id="ZKG-Yp-0El"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="962" y="-755"/>
+            <point key="canvasLocation" x="775" y="-896"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vcu-jb-vX9">

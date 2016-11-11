@@ -1,5 +1,5 @@
 //
-//  FVTViewController.h
+//  FVViewController.h
 //  FVCustomTransition
 //
 //  Created by iforvert on 2016/11/11.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FVTViewController : UITableViewController
+@interface FVViewController : UITableViewController
 
 @end

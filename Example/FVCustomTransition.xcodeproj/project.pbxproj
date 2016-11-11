@@ -11,13 +11,13 @@
 		AC0AF21B1DD5898E00B087DA /* FVBaseTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF21A1DD5898E00B087DA /* FVBaseTransitionAnimator.m */; };
 		AC0AF21E1DD58CDF00B087DA /* FVSlideTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF21D1DD58CDF00B087DA /* FVSlideTransitionAnimator.m */; };
 		AC0AF2231DD59C6100B087DA /* FVConfigOption.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF2221DD59C6100B087DA /* FVConfigOption.m */; };
+		AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF2251DD5A65700B087DA /* FVViewController.m */; };
 		AC2EBA4E1DD5595D0058D302 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EBA4D1DD5595D0058D302 /* main.m */; };
 		AC2EBA571DD5595D0058D302 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA551DD5595D0058D302 /* Main.storyboard */; };
 		AC2EBA591DD5595D0058D302 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA581DD5595D0058D302 /* Assets.xcassets */; };
 		AC2EBA5C1DD5595D0058D302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA5A1DD5595D0058D302 /* LaunchScreen.storyboard */; };
 		AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EBA641DD559ED0058D302 /* FVAppDelegate.m */; };
 		AC2EBA671DD55C260058D302 /* InitialDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA661DD55C260058D302 /* InitialDefaults.plist */; };
-		AC2EBA6A1DD561C70058D302 /* FVTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EBA691DD561C70058D302 /* FVTViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +29,8 @@
 		AC0AF21D1DD58CDF00B087DA /* FVSlideTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVSlideTransitionAnimator.m; sourceTree = "<group>"; };
 		AC0AF2211DD59C6100B087DA /* FVConfigOption.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVConfigOption.h; sourceTree = "<group>"; };
 		AC0AF2221DD59C6100B087DA /* FVConfigOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVConfigOption.m; sourceTree = "<group>"; };
+		AC0AF2241DD5A65700B087DA /* FVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVViewController.h; sourceTree = "<group>"; };
+		AC0AF2251DD5A65700B087DA /* FVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVViewController.m; sourceTree = "<group>"; };
 		AC2EBA491DD5595D0058D302 /* FVCustomTransition.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FVCustomTransition.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC2EBA4D1DD5595D0058D302 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		AC2EBA561DD5595D0058D302 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,8 +40,6 @@
 		AC2EBA631DD559ED0058D302 /* FVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVAppDelegate.h; sourceTree = "<group>"; };
 		AC2EBA641DD559ED0058D302 /* FVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVAppDelegate.m; sourceTree = "<group>"; };
 		AC2EBA661DD55C260058D302 /* InitialDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InitialDefaults.plist; sourceTree = "<group>"; };
-		AC2EBA681DD561C70058D302 /* FVTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVTViewController.h; sourceTree = "<group>"; };
-		AC2EBA691DD561C70058D302 /* FVTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVTViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +101,11 @@
 		AC2EBA4B1DD5595D0058D302 /* FVCustomTransition */ = {
 			isa = PBXGroup;
 			children = (
+				AC0AF2241DD5A65700B087DA /* FVViewController.h */,
+				AC0AF2251DD5A65700B087DA /* FVViewController.m */,
 				AC0AF2201DD59C3900B087DA /* configData */,
 				AC0AF2181DD5892C00B087DA /* animators */,
 				AC0AF2141DD5881400B087DA /* class */,
-				AC2EBA681DD561C70058D302 /* FVTViewController.h */,
-				AC2EBA691DD561C70058D302 /* FVTViewController.m */,
 				AC2EBA4C1DD5595D0058D302 /* Supporting Files */,
 				AC2EBA631DD559ED0058D302 /* FVAppDelegate.h */,
 				AC2EBA641DD559ED0058D302 /* FVAppDelegate.m */,
@@ -200,7 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0AF2231DD59C6100B087DA /* FVConfigOption.m in Sources */,
-				AC2EBA6A1DD561C70058D302 /* FVTViewController.m in Sources */,
+				AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */,
 				AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */,
 				AC0AF21B1DD5898E00B087DA /* FVBaseTransitionAnimator.m in Sources */,
 				AC0AF2171DD5884000B087DA /* FVSlideViewController.m in Sources */,
