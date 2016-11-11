@@ -15,7 +15,7 @@
     // Register the initial user defaults
     NSString *initialDefaultsPath = [[NSBundle mainBundle] pathForResource:@"InitialDefaults" ofType:@"plist"];
     NSDictionary *initialDefaults = [NSDictionary dictionaryWithContentsOfFile:initialDefaultsPath];
-    [[NSUserDefaults standardUserDefaults] registerDefaults:initialDefaults];
+    [[NSUserDefaults standardUserDefaults]  registerDefaults:initialDefaults];
     
     return YES;
 }
