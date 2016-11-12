@@ -21,6 +21,7 @@
 		AC2EBA5C1DD5595D0058D302 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA5A1DD5595D0058D302 /* LaunchScreen.storyboard */; };
 		AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EBA641DD559ED0058D302 /* FVAppDelegate.m */; };
 		AC2EBA671DD55C260058D302 /* InitialDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA661DD55C260058D302 /* InitialDefaults.plist */; };
+		AC53BBB01DD6AB040085FA2D /* FVFromEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,7 @@
 		AC0AF2221DD59C6100B087DA /* FVConfigOption.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVConfigOption.m; sourceTree = "<group>"; };
 		AC0AF2241DD5A65700B087DA /* FVViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVViewController.h; sourceTree = "<group>"; };
 		AC0AF2251DD5A65700B087DA /* FVViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVViewController.m; sourceTree = "<group>"; };
-		AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = OptionsSB.storyboard; sourceTree = "<group>"; };
+		AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = OptionsSB.storyboard; path = ../OptionsSB.storyboard; sourceTree = "<group>"; };
 		AC0AF2291DD5CD2500B087DA /* FVOptionsTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVOptionsTransitionAnimator.h; sourceTree = "<group>"; };
 		AC0AF22A1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVOptionsTransitionAnimator.m; sourceTree = "<group>"; };
 		AC0AF22C1DD5D2F000B087DA /* FVCofigOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVCofigOptionViewController.h; sourceTree = "<group>"; };
@@ -48,6 +49,8 @@
 		AC2EBA631DD559ED0058D302 /* FVAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVAppDelegate.h; sourceTree = "<group>"; };
 		AC2EBA641DD559ED0058D302 /* FVAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVAppDelegate.m; sourceTree = "<group>"; };
 		AC2EBA661DD55C260058D302 /* InitialDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InitialDefaults.plist; sourceTree = "<group>"; };
+		AC53BBAE1DD6AB040085FA2D /* FVFromEdgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVFromEdgeViewController.h; sourceTree = "<group>"; };
+		AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVFromEdgeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,9 @@
 				AC0AF2161DD5884000B087DA /* FVSlideViewController.m */,
 				AC0AF22C1DD5D2F000B087DA /* FVCofigOptionViewController.h */,
 				AC0AF22D1DD5D2F000B087DA /* FVCofigOptionViewController.m */,
+				AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */,
+				AC53BBAE1DD6AB040085FA2D /* FVFromEdgeViewController.h */,
+				AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -115,7 +121,6 @@
 			children = (
 				AC0AF2241DD5A65700B087DA /* FVViewController.h */,
 				AC0AF2251DD5A65700B087DA /* FVViewController.m */,
-				AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */,
 				AC0AF2201DD59C3900B087DA /* configData */,
 				AC0AF2181DD5892C00B087DA /* animators */,
 				AC0AF2141DD5881400B087DA /* class */,
@@ -218,6 +223,7 @@
 				AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */,
 				AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */,
 				AC0AF21B1DD5898E00B087DA /* FVBaseTransitionAnimator.m in Sources */,
+				AC53BBB01DD6AB040085FA2D /* FVFromEdgeViewController.m in Sources */,
 				AC0AF2171DD5884000B087DA /* FVSlideViewController.m in Sources */,
 				AC2EBA4E1DD5595D0058D302 /* main.m in Sources */,
 				AC0AF22B1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m in Sources */,
