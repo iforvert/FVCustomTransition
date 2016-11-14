@@ -22,6 +22,8 @@
 		AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC2EBA641DD559ED0058D302 /* FVAppDelegate.m */; };
 		AC2EBA671DD55C260058D302 /* InitialDefaults.plist in Resources */ = {isa = PBXBuildFile; fileRef = AC2EBA661DD55C260058D302 /* InitialDefaults.plist */; };
 		AC53BBB01DD6AB040085FA2D /* FVFromEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */; };
+		ACD61E9C1DD9AD3000E30519 /* FVBounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD61E9B1DD9AD3000E30519 /* FVBounceViewController.m */; };
+		ACD61E9F1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD61E9E1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +53,10 @@
 		AC2EBA661DD55C260058D302 /* InitialDefaults.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = InitialDefaults.plist; sourceTree = "<group>"; };
 		AC53BBAE1DD6AB040085FA2D /* FVFromEdgeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVFromEdgeViewController.h; sourceTree = "<group>"; };
 		AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVFromEdgeViewController.m; sourceTree = "<group>"; };
+		ACD61E9A1DD9AD3000E30519 /* FVBounceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVBounceViewController.h; sourceTree = "<group>"; };
+		ACD61E9B1DD9AD3000E30519 /* FVBounceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVBounceViewController.m; sourceTree = "<group>"; };
+		ACD61E9D1DD9AFC400E30519 /* FVBounceTransitionAnimtor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVBounceTransitionAnimtor.h; sourceTree = "<group>"; };
+		ACD61E9E1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVBounceTransitionAnimtor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +80,8 @@
 				AC0AF2271DD5C44F00B087DA /* OptionsSB.storyboard */,
 				AC53BBAE1DD6AB040085FA2D /* FVFromEdgeViewController.h */,
 				AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */,
+				ACD61E9A1DD9AD3000E30519 /* FVBounceViewController.h */,
+				ACD61E9B1DD9AD3000E30519 /* FVBounceViewController.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -87,6 +95,8 @@
 				AC0AF21D1DD58CDF00B087DA /* FVSlideTransitionAnimator.m */,
 				AC0AF2291DD5CD2500B087DA /* FVOptionsTransitionAnimator.h */,
 				AC0AF22A1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m */,
+				ACD61E9D1DD9AFC400E30519 /* FVBounceTransitionAnimtor.h */,
+				ACD61E9E1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m */,
 			);
 			path = animators;
 			sourceTree = "<group>";
@@ -221,12 +231,14 @@
 				AC0AF2231DD59C6100B087DA /* FVConfigOption.m in Sources */,
 				AC0AF22E1DD5D2F000B087DA /* FVCofigOptionViewController.m in Sources */,
 				AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */,
+				ACD61E9F1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m in Sources */,
 				AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */,
 				AC0AF21B1DD5898E00B087DA /* FVBaseTransitionAnimator.m in Sources */,
 				AC53BBB01DD6AB040085FA2D /* FVFromEdgeViewController.m in Sources */,
 				AC0AF2171DD5884000B087DA /* FVSlideViewController.m in Sources */,
 				AC2EBA4E1DD5595D0058D302 /* main.m in Sources */,
 				AC0AF22B1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m in Sources */,
+				ACD61E9C1DD9AD3000E30519 /* FVBounceViewController.m in Sources */,
 				AC0AF21E1DD58CDF00B087DA /* FVSlideTransitionAnimator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -15,6 +15,7 @@
 
 typedef NS_ENUM(NSInteger, TableViewSection){
     TableViewSectionBasic,
+    TableViewSectionSpring,
 };
 
 // Segue ids
@@ -23,6 +24,8 @@ static NSString * const kSegueSlidPush = @"slidePush";
 static NSString * const kSegueSlidModal = @"slideModal";
 static NSString * const kSegueOptionsDismiss = @"optionsDismiss";
 static NSString * const kSegueDropDismiss    = @"dropDismiss";
+static NSString * const kSegueBouncePush = @"bouncePush";
+static NSString * const kSegueBounceModal = @"bounceModal";
 
 
 @interface FVViewController ()<UIViewControllerTransitioningDelegate,UINavigationControllerDelegate>
@@ -47,6 +50,14 @@ static NSString * const kSegueDropDismiss    = @"dropDismiss";
     else if ([segue.identifier isEqualToString:kSegueSlidPush])
     {
         self.navigationController.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:kSegueBouncePush])
+    {
+        self.navigationController.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:kSegueBounceModal])
+    {
+    
     }
     
 }
@@ -157,6 +168,11 @@ static NSString * const kSegueDropDismiss    = @"dropDismiss";
             NSString *identifier = option.pushTransition ? kSegueSlidPush : kSegueSlidModal;
             [self performSegueWithIdentifier:identifier sender:self];
             break;
+        }
+        case TableViewSectionSpring:
+        {
+            NSString *identifier = option.pushTransition ? kSegueBouncePush : kSegueBounceModal;
+            [self performSegueWithIdentifier:identifier sender:self];
         }
         
             

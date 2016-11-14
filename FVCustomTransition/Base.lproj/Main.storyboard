@@ -87,11 +87,32 @@
                     <connections>
                         <segue destination="TWd-EN-8Cd" kind="push" identifier="slidePush" id="9uZ-ly-ABj"/>
                         <segue destination="TWd-EN-8Cd" kind="modal" identifier="slideModal" id="et2-JL-6Eo"/>
+                        <segue destination="5LU-2U-sUC" kind="push" identifier="bouncePush" id="lSE-yq-86a"/>
+                        <segue destination="5LU-2U-sUC" kind="modal" identifier="bounceModal" id="15h-Uk-ryd"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nza-ld-EDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-191" y="-261"/>
+        </scene>
+        <!--Bounce View Controller-->
+        <scene sceneID="9iL-Us-IiJ">
+            <objects>
+                <viewController id="5LU-2U-sUC" customClass="FVBounceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TLL-LK-NC2"/>
+                        <viewControllerLayoutGuide type="bottom" id="jFM-oH-iIO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mj0-M4-9xl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="s1l-uJ-k1e"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jn8-8O-mst" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="686" y="-261"/>
         </scene>
         <!--CustomPushStyle-->
         <scene sceneID="B5u-os-1hO">
@@ -120,7 +141,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="684" y="-261"/>
+            <point key="canvasLocation" x="686" y="-934"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="vcu-jb-vX9">
@@ -140,6 +161,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="lSE-yq-86a"/>
         <segue reference="9uZ-ly-ABj"/>
     </inferredMetricsTieBreakers>
 </document>
