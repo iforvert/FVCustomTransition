@@ -17,15 +17,20 @@ FVCustomTransition introduces a correct and general solution to perform viewCont
 
 FVCustomTransition provides a few examples of transition, the show is as follows, through the realization of these transition effects can make our controller to switch more smoothly and personality, but also help us achieve some cool effect, to some extent To enhance the user experience.
 
-### first Example
+### First Example
+
+Example 1 shows how we can set the transition duration and the direction of the controller to switch when the controller is switched(push&modal).
 
 <img src="image/Basic.gif" width = 200 />
 
-### second Example
 
-coding....
+### Second Example
 
-### third Example
+Example 2 has all of the characteristics of one example, in addition to the effect of the spring, in which the spring effect on the length of time, damping coefficient, ejection rate can be free to change
+
+<img src = "image/Bounce.gif" width = 200/>
+
+### Third Example
 
 coding...
 
