@@ -21,10 +21,10 @@
                             <tableViewSection headerTitle="基本的" id="pxh-Tn-9hc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fZt-mP-1Tm">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fZt-mP-1Tm" id="92F-k2-dw7">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滑动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMt-Aw-MiQ">
@@ -47,10 +47,10 @@
                             <tableViewSection headerTitle="弹簧" id="0Q9-cE-lAc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="a5d-bn-Kmb">
-                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="157" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a5d-bn-Kmb" id="lmZ-bD-AaX">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="弹簧效果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGk-pb-6kr">
@@ -107,12 +107,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="VZm-q2-Scs" appends="YES" id="flp-mu-1QZ"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="s1l-uJ-k1e"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jn8-8O-mst" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="V5X-hd-1lO" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="VZm-q2-Scs">
+                    <connections>
+                        <segue destination="V5X-hd-1lO" kind="unwind" unwindAction="unwindToViewController:" id="8ZI-xS-Hi1"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="686" y="-261"/>
+            <point key="canvasLocation" x="870" y="-261"/>
         </scene>
         <!--CustomPushStyle-->
         <scene sceneID="B5u-os-1hO">

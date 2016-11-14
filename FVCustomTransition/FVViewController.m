@@ -12,6 +12,7 @@
 #import "FVCofigOptionViewController.h"
 #import "FVSlideViewController.h"
 #import "FVBounceViewController.h"
+#import "FVBounceViewController.h"
 
 #import "FVSlideTransitionAnimator.h"
 #import "FVOptionsTransitionAnimator.h"
@@ -27,8 +28,10 @@ typedef NS_ENUM(NSInteger, TableViewSection){
 
 static NSString * const kSegueSlidPush = @"slidePush";
 static NSString * const kSegueSlidModal = @"slideModal";
+
 static NSString * const kSegueOptionsDismiss = @"optionsDismiss";
 static NSString * const kSegueDropDismiss    = @"dropDismiss";
+
 static NSString * const kSegueBouncePush = @"bouncePush";
 static NSString * const kSegueBounceModal = @"bounceModal";
 
@@ -56,14 +59,17 @@ static NSString * const kSegueBounceModal = @"bounceModal";
     {
         self.navigationController.delegate = self;
     }
+    else if ([segue.identifier isEqualToString:kSegueBounceModal])
+    {
+        UIViewController *vc = segue.destinationViewController;
+        vc.modalTransitionStyle = UIModalPresentationCustom;
+        vc.transitioningDelegate = self;
+    }
     else if ([segue.identifier isEqualToString:kSegueBouncePush])
     {
         self.navigationController.delegate = self;
     }
-    else if ([segue.identifier isEqualToString:kSegueBounceModal])
-    {
-    
-    }
+
     
 }
 
@@ -85,6 +91,7 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         animator.edge = option.edge;
         animationController = animator;
     }
+    // Options
     else if ([presented isKindOfClass:[UINavigationController class]])
     {
         FVOptionsTransitionAnimator *animator = [[FVOptionsTransitionAnimator alloc] init];
@@ -92,6 +99,18 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         animator.duration = option.duration;
         animationController = animator;
     }
+    // Bounces
+    else if ([presented isKindOfClass:[FVBounceViewController class]])
+    {
+        FVBounceTransitionAnimtor *animator = [[FVBounceTransitionAnimtor alloc] init];
+        animator.appearing = YES;
+        animator.duration = option.springDuration;
+        animator.edge = option.edge;
+        animator.velocity = option.velocity;
+        animator.dampingRatio = option.dampingRatio;
+        animationController = animator;
+    }
+
 
     return animationController;
 }
@@ -109,7 +128,7 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         FVSlideTransitionAnimator *animator = [[FVSlideTransitionAnimator alloc] init];
         animator.appearing = NO;
         animator.duration = option.duration;
-        animator.edge = FVEdgeBottom;
+        animator.edge = option.edge;
         animationController = animator;
     }
     else if ([dismissed isKindOfClass:[UINavigationController class]])
@@ -122,6 +141,16 @@ static NSString * const kSegueBounceModal = @"bounceModal";
             animationController = animator;
         }
     
+    }
+    else if ([dismissed isKindOfClass:[FVBounceViewController class]])
+    {
+        FVBounceTransitionAnimtor *animator = [[FVBounceTransitionAnimtor alloc] init];
+        animator.appearing = NO;
+        animator.duration = option.springDuration;
+        animator.edge = option.edge;
+        animator.dampingRatio = 1;
+        animator.velocity = option.velocity;
+        animationController = animator;
     }
     
     return animationController;
