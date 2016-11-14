@@ -6,8 +6,11 @@
 //  Copyright © 2016年 iforvert. All rights reserved.
 //
 
-#import "FVBaseTransitionAnimator.h"
+#import "FVSlideTransitionAnimator.h"
 
-@interface FVBounceTransitionAnimtor : FVBaseTransitionAnimator
+@interface FVBounceTransitionAnimtor : FVSlideTransitionAnimator
+
+@property (nonatomic, assign) CGFloat dampingRatio;
+@property (nonatomic, assign) CGFloat velocity;
 
 @end

@@ -8,10 +8,15 @@
 
 #import "FVViewController.h"
 #import "FVConfigOption.h"
+
+#import "FVCofigOptionViewController.h"
 #import "FVSlideViewController.h"
+#import "FVBounceViewController.h"
+
 #import "FVSlideTransitionAnimator.h"
 #import "FVOptionsTransitionAnimator.h"
-#import "FVCofigOptionViewController.h"
+#import "FVBounceTransitionAnimtor.h"
+
 
 typedef NS_ENUM(NSInteger, TableViewSection){
     TableViewSectionBasic,
@@ -150,6 +155,30 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         animator.edge = option.edge;
         animationController = animator;
     }
+    // Bounce Push
+    else if ([toVC isKindOfClass:[FVBounceViewController class]] && operation == UINavigationControllerOperationPush)
+    {
+        FVBounceTransitionAnimtor *animator = [[FVBounceTransitionAnimtor alloc] init];
+        animator.appearing = YES;
+        animator.duration = option.springDuration;
+        animator.edge = option.edge;
+        animator.dampingRatio = option.dampingRatio;
+        animator.velocity = option.velocity;
+        
+        animationController = animator;
+    }
+    // Bounce Pop
+    else if ([fromVC isKindOfClass:[FVBounceViewController class]] && operation == UINavigationControllerOperationPop)
+    {
+        FVBounceTransitionAnimtor *animator = [[FVBounceTransitionAnimtor alloc] init];
+        animator.appearing = NO;
+        animator.duration = option.springDuration;
+        animator.edge = option.edge;
+        animator.dampingRatio = 1.0;
+        animator.velocity = option.velocity;
+        animationController = animator;
+    }
+    
     return animationController;
 }
 
@@ -174,7 +203,6 @@ static NSString * const kSegueBounceModal = @"bounceModal";
             NSString *identifier = option.pushTransition ? kSegueBouncePush : kSegueBounceModal;
             [self performSegueWithIdentifier:identifier sender:self];
         }
-        
             
         default:
             break;
