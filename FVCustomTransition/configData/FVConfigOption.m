@@ -14,6 +14,7 @@ static NSString * const kEdgeKey            = @"edge";
 static NSString * const kDampingRatioKey    = @"dampingRatio";
 static NSString * const kVelocityKey        = @"velocity";
 static NSString * const kSpringDurationKey  = @"springDuration";
+static NSString * const kFoldDurationKey    = @"foldDuration";
 
 @implementation FVConfigOption
 
@@ -87,6 +88,16 @@ static NSString * const kSpringDurationKey  = @"springDuration";
 - (void)setSpringDuration:(NSTimeInterval)springDuration
 {
     [[NSUserDefaults standardUserDefaults] setDouble:springDuration forKey:kSpringDurationKey];
+}
+
+- (NSTimeInterval)foldDuration
+{
+    return [[NSUserDefaults standardUserDefaults] doubleForKey:kFoldDurationKey];
+}
+
+- (void)setFoldDuration:(NSTimeInterval)foldDuration
+{
+    [[NSUserDefaults standardUserDefaults] setDouble:foldDuration forKey:kFoldDurationKey];
 }
 
 @end

@@ -10,14 +10,16 @@
 #import "FVConfigOption.h"
 
 typedef NS_ENUM(NSInteger, Tag) {
-    // 转场时间
+    // Normal Transition Duration
     TagDurationField        = 10,
-    // 阻尼系数
+    // DampingRatio
     TagDampingRatioField    = 20,
-    // 弹动速度
+    // Velocity
     TagSpringVelocityField  = 30,
-    // 弹动时长
-    TagSpringDurationField  = 40
+    // SpringDuration
+    TagSpringDurationField  = 40,
+    // Fold Duration
+    TagFoldDurationField    = 50
 };
 
 @interface FVCofigOptionViewController ()<UITextFieldDelegate>
@@ -28,6 +30,8 @@ typedef NS_ENUM(NSInteger, Tag) {
 @property (weak, nonatomic) IBOutlet UITextField *dampingRatioField;
 @property (weak, nonatomic) IBOutlet UITextField *springVelocityField;
 @property (weak, nonatomic) IBOutlet UITextField *springDurationField;
+@property (weak, nonatomic) IBOutlet UITextField *foldDurationField;
+
 @property (nonatomic, strong) NSNumberFormatter *numberFormatter;
 
 @end
@@ -55,20 +59,23 @@ typedef NS_ENUM(NSInteger, Tag) {
     self.dampingRatioField.text = [self.numberFormatter stringFromNumber:@(options.dampingRatio)];
     self.springVelocityField.text = [self.numberFormatter stringFromNumber:@(options.velocity)];
     self.springDurationField.text = [self.numberFormatter stringFromNumber:@(options.springDuration)];
+    self.foldDurationField.text = [self.numberFormatter stringFromNumber:@(options.foldDuration)];
     
 }
 
 - (void)configEssentialInfo
 {
-    self.durationField.delegate = self;
-    self.dampingRatioField.delegate = self;
-    self.springVelocityField.delegate = self;
-    self.springDurationField.delegate = self;
+    self.durationField.delegate         = self;
+    self.dampingRatioField.delegate     = self;
+    self.springVelocityField.delegate   = self;
+    self.springDurationField.delegate   = self;
+    self.foldDurationField.delegate     = self;
     
-    self.durationField.tag = TagDurationField;
-    self.dampingRatioField.tag = TagDampingRatioField;
-    self.springVelocityField.tag = TagSpringVelocityField;
-    self.springDurationField.tag = TagSpringDurationField;
+    self.durationField.tag          = TagDurationField;
+    self.dampingRatioField.tag      = TagDampingRatioField;
+    self.springVelocityField.tag    = TagSpringVelocityField;
+    self.springDurationField.tag    = TagSpringDurationField;
+    self.foldDurationField.tag      = TagFoldDurationField;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -113,6 +120,10 @@ typedef NS_ENUM(NSInteger, Tag) {
         }
         case TagSpringDurationField: {
             option.springDuration = [value doubleValue];
+            break;
+        }
+        case TagFoldDurationField: {
+            option.foldDuration = [value doubleValue];
             break;
         }
         default:

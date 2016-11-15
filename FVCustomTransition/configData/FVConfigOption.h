@@ -18,10 +18,13 @@
 // Slide
 @property (nonatomic, assign) FVEdge edge;
 
-// Spring
+// Bounce
 @property (nonatomic, assign) CGFloat dampingRatio;
 @property (nonatomic, assign) CGFloat velocity;
 @property (nonatomic, assign) NSTimeInterval springDuration;
+
+// Fold
+@property (nonatomic, assign) NSTimeInterval foldDuration;
 
 + (instancetype)sharedConfigOptions;
 

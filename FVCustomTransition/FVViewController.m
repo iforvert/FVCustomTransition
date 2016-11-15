@@ -125,7 +125,7 @@ static NSString * const kSegueFoldModal     = @"foldModal";
     {
         FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
         animator.appearing = YES;
-        animator.duration = option.duration;
+        animator.duration = option.foldDuration;
         animationController = animator;
     }
 
@@ -174,7 +174,7 @@ static NSString * const kSegueFoldModal     = @"foldModal";
     {
         FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
         animator.appearing = NO;
-        animator.duration = option.duration;
+        animator.duration = option.foldDuration;
         animationController = animator;
     }
     
@@ -237,14 +237,14 @@ static NSString * const kSegueFoldModal     = @"foldModal";
     {
         FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
         animator.appearing = YES;
-        animator.duration = 2.5;
+        animator.duration = option.foldDuration;
         animationController = animator;
     }
     else if ([fromVC isKindOfClass:[FVFoldViewController class]] && operation == UINavigationControllerOperationPop)
     {
         FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
         animator.appearing = NO;
-        animator.duration = 2.5;
+        animator.duration = option.foldDuration;
         animationController = animator;
     }
     

@@ -14,5 +14,7 @@
 	<integer>4</integer>
 	<key>springDuration</key>
 	<real>1.5</real>
+	<key>foldDuration</key>
+	<string>2.5</string>
 </dict>
 </plist>
