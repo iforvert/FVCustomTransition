@@ -13,27 +13,28 @@
 #import "FVSlideViewController.h"
 #import "FVBounceViewController.h"
 #import "FVBounceViewController.h"
+#import "FVFoldViewController.h"
 
 #import "FVSlideTransitionAnimator.h"
 #import "FVOptionsTransitionAnimator.h"
 #import "FVBounceTransitionAnimtor.h"
+#import "FVFoldTransitionAnimator.h"
 
 
 typedef NS_ENUM(NSInteger, TableViewSection){
     TableViewSectionBasic,
     TableViewSectionSpring,
+    TableViewSectionKeyFrame,
 };
 
 // Segue ids
 
-static NSString * const kSegueSlidPush = @"slidePush";
-static NSString * const kSegueSlidModal = @"slideModal";
-
-static NSString * const kSegueOptionsDismiss = @"optionsDismiss";
-static NSString * const kSegueDropDismiss    = @"dropDismiss";
-
-static NSString * const kSegueBouncePush = @"bouncePush";
-static NSString * const kSegueBounceModal = @"bounceModal";
+static NSString * const kSegueSlidPush      = @"slidePush";
+static NSString * const kSegueSlidModal     = @"slideModal";
+static NSString * const kSegueBouncePush    = @"bouncePush";
+static NSString * const kSegueBounceModal   = @"bounceModal";
+static NSString * const kSegueFoldPush      = @"foldPush";
+static NSString * const kSegueFoldModal     = @"foldModal";
 
 
 @interface FVViewController ()<UIViewControllerTransitioningDelegate,UINavigationControllerDelegate>
@@ -48,10 +49,10 @@ static NSString * const kSegueBounceModal = @"bounceModal";
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    // Slide
     if ([segue.identifier isEqualToString:kSegueSlidModal])
     {
         UIViewController *vc = segue.destinationViewController;
-        vc.modalTransitionStyle = UIModalPresentationCustom;
         vc.transitioningDelegate = self;
         
     }
@@ -59,17 +60,26 @@ static NSString * const kSegueBounceModal = @"bounceModal";
     {
         self.navigationController.delegate = self;
     }
+    // Bounce
     else if ([segue.identifier isEqualToString:kSegueBounceModal])
     {
         UIViewController *vc = segue.destinationViewController;
-        vc.modalTransitionStyle = UIModalPresentationCustom;
         vc.transitioningDelegate = self;
     }
     else if ([segue.identifier isEqualToString:kSegueBouncePush])
     {
         self.navigationController.delegate = self;
     }
-
+    // Fold
+    else if ([segue.identifier isEqualToString:kSegueFoldPush])
+    {
+        self.navigationController.delegate = self;
+    }
+    else if ([segue.identifier isEqualToString:kSegueFoldModal])
+    {
+        UIViewController *vc = segue.destinationViewController;
+        vc.transitioningDelegate = self;
+    }
     
 }
 
@@ -108,6 +118,14 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         animator.edge = option.edge;
         animator.velocity = option.velocity;
         animator.dampingRatio = option.dampingRatio;
+        animationController = animator;
+    }
+    // Fold
+    else if ([presented isKindOfClass:[FVFoldViewController class]])
+    {
+        FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
+        animator.appearing = YES;
+        animator.duration = option.duration;
         animationController = animator;
     }
 
@@ -150,6 +168,13 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         animator.edge = option.edge;
         animator.dampingRatio = 1;
         animator.velocity = option.velocity;
+        animationController = animator;
+    }
+    else if ([dismissed isKindOfClass:[FVFoldViewController class]])
+    {
+        FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
+        animator.appearing = NO;
+        animator.duration = option.duration;
         animationController = animator;
     }
     
@@ -207,6 +232,22 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         animator.velocity = option.velocity;
         animationController = animator;
     }
+    // Fold push
+    else if ([toVC isKindOfClass:[FVFoldViewController class]] && operation == UINavigationControllerOperationPush)
+    {
+        FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
+        animator.appearing = YES;
+        animator.duration = 2.5;
+        animationController = animator;
+    }
+    else if ([fromVC isKindOfClass:[FVFoldViewController class]] && operation == UINavigationControllerOperationPop)
+    {
+        FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
+        animator.appearing = NO;
+        animator.duration = 2.5;
+        animationController = animator;
+    }
+    
     
     return animationController;
 }
@@ -221,8 +262,8 @@ static NSString * const kSegueBounceModal = @"bounceModal";
     
     switch (indexPath.section) {
             
-        case TableViewSectionBasic: {
-            
+        case TableViewSectionBasic:
+        {
             NSString *identifier = option.pushTransition ? kSegueSlidPush : kSegueSlidModal;
             [self performSegueWithIdentifier:identifier sender:self];
             break;
@@ -230,6 +271,11 @@ static NSString * const kSegueBounceModal = @"bounceModal";
         case TableViewSectionSpring:
         {
             NSString *identifier = option.pushTransition ? kSegueBouncePush : kSegueBounceModal;
+            [self performSegueWithIdentifier:identifier sender:self];
+        }
+        case TableViewSectionKeyFrame:
+        {
+            NSString *identifier = option.pushTransition ? kSegueFoldPush : kSegueFoldModal;
             [self performSegueWithIdentifier:identifier sender:self];
         }
             
@@ -240,18 +286,8 @@ static NSString * const kSegueBounceModal = @"bounceModal";
 
 #pragma mark - Storyboard unwinding
 
-/*
- Unwind segue action called to dismiss the Options and Drop view controllers and
- when the Slide, Bounce and Fold view controllers are dismissed with a single tap.
- 
- Normally an unwind segue will pop/dismiss the view controller but this doesn't happen
- for custom modal transitions so we have to manually call dismiss.
- */
 - (IBAction)unwindToViewController:(UIStoryboardSegue *)sender
 {
-    if ([sender.identifier isEqualToString:kSegueOptionsDismiss] || [sender.identifier isEqualToString:kSegueDropDismiss]) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-    }
 }
 
 

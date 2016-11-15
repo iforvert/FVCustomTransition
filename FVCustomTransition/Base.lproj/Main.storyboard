@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
-                            <tableViewSection headerTitle="基本的" id="pxh-Tn-9hc">
+                            <tableViewSection headerTitle="基本动画" id="pxh-Tn-9hc">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="fZt-mP-1Tm">
                                         <rect key="frame" x="0.0" y="56" width="375" height="44"/>
@@ -27,7 +27,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滑动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMt-Aw-MiQ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="滑动效果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMt-Aw-MiQ">
                                                     <rect key="frame" x="17" y="0.0" width="350" height="43.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                     <nil key="textColor"/>
@@ -70,6 +70,32 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
+                            <tableViewSection headerTitle="关键帧" id="ZES-Bg-SUg">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IX6-nY-eRD">
+                                        <rect key="frame" x="0.0" y="258" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IX6-nY-eRD" id="Uuu-mA-tXb">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="折叠效果" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uhu-FX-2Fi">
+                                                    <rect key="frame" x="17" y="0.0" width="350" height="43.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="uhu-FX-2Fi" firstAttribute="leading" secondItem="Uuu-mA-tXb" secondAttribute="leading" constant="17" id="Ko5-yJ-c4a"/>
+                                                <constraint firstItem="uhu-FX-2Fi" firstAttribute="top" secondItem="Uuu-mA-tXb" secondAttribute="top" id="XO0-1D-QAR"/>
+                                                <constraint firstAttribute="bottom" secondItem="uhu-FX-2Fi" secondAttribute="bottom" id="rT7-HE-Opl"/>
+                                                <constraint firstAttribute="trailing" secondItem="uhu-FX-2Fi" secondAttribute="trailing" constant="8" id="xg5-ps-nxi"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="hUi-T7-Igy" id="1xU-wI-szB"/>
@@ -89,6 +115,8 @@
                         <segue destination="TWd-EN-8Cd" kind="modal" identifier="slideModal" id="et2-JL-6Eo"/>
                         <segue destination="5LU-2U-sUC" kind="push" identifier="bouncePush" id="lSE-yq-86a"/>
                         <segue destination="5LU-2U-sUC" kind="modal" identifier="bounceModal" id="15h-Uk-ryd"/>
+                        <segue destination="EjN-fl-XNn" kind="push" identifier="foldPush" id="G4l-ze-ECa"/>
+                        <segue destination="EjN-fl-XNn" kind="modal" identifier="foldModal" id="2Uc-0G-cDm"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nza-ld-EDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -122,7 +150,37 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="870" y="-261"/>
+            <point key="canvasLocation" x="686" y="-261"/>
+        </scene>
+        <!--Fold View Controller-->
+        <scene sceneID="mT4-NH-FF2">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="EjN-fl-XNn" customClass="FVFoldViewController" sceneMemberID="viewController">
+                    <imageView key="view" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="foldBg" id="rs0-IB-0VQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <accessibility key="accessibilityConfiguration">
+                            <accessibilityTraits key="traits" image="YES" notEnabled="YES"/>
+                        </accessibility>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="wZz-CN-9fv" appends="YES" id="8fg-Iu-4kH"/>
+                        </connections>
+                    </imageView>
+                    <navigationItem key="navigationItem" id="gnk-Bl-Z6l"/>
+                    <connections>
+                        <outlet property="foldBgClick" destination="rs0-IB-0VQ" id="k2n-Wc-ArW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J4w-QV-8Hi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f7A-Ru-P6M" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="wZz-CN-9fv">
+                    <connections>
+                        <segue destination="f7A-Ru-P6M" kind="unwind" unwindAction="unwindToViewController:" id="gbB-WD-ear"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="686" y="515"/>
         </scene>
         <!--CustomPushStyle-->
         <scene sceneID="B5u-os-1hO">
@@ -170,7 +228,11 @@
             <point key="canvasLocation" x="-1060" y="-261"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="foldBg" width="320" height="480"/>
+    </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="2Uc-0G-cDm"/>
         <segue reference="lSE-yq-86a"/>
         <segue reference="9uZ-ly-ABj"/>
     </inferredMetricsTieBreakers>

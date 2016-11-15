@@ -24,6 +24,8 @@
 		AC53BBB01DD6AB040085FA2D /* FVFromEdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */; };
 		ACD61E9C1DD9AD3000E30519 /* FVBounceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD61E9B1DD9AD3000E30519 /* FVBounceViewController.m */; };
 		ACD61E9F1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD61E9E1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m */; };
+		ACD61EA51DDA0F7C00E30519 /* FVFoldViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD61EA41DDA0F7C00E30519 /* FVFoldViewController.m */; };
+		ACD61EA81DDA11FD00E30519 /* FVFoldTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = ACD61EA71DDA11FD00E30519 /* FVFoldTransitionAnimator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +59,10 @@
 		ACD61E9B1DD9AD3000E30519 /* FVBounceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVBounceViewController.m; sourceTree = "<group>"; };
 		ACD61E9D1DD9AFC400E30519 /* FVBounceTransitionAnimtor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVBounceTransitionAnimtor.h; sourceTree = "<group>"; };
 		ACD61E9E1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVBounceTransitionAnimtor.m; sourceTree = "<group>"; };
+		ACD61EA31DDA0F7C00E30519 /* FVFoldViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVFoldViewController.h; sourceTree = "<group>"; };
+		ACD61EA41DDA0F7C00E30519 /* FVFoldViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVFoldViewController.m; sourceTree = "<group>"; };
+		ACD61EA61DDA11FD00E30519 /* FVFoldTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVFoldTransitionAnimator.h; sourceTree = "<group>"; };
+		ACD61EA71DDA11FD00E30519 /* FVFoldTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVFoldTransitionAnimator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +88,8 @@
 				AC53BBAF1DD6AB040085FA2D /* FVFromEdgeViewController.m */,
 				ACD61E9A1DD9AD3000E30519 /* FVBounceViewController.h */,
 				ACD61E9B1DD9AD3000E30519 /* FVBounceViewController.m */,
+				ACD61EA31DDA0F7C00E30519 /* FVFoldViewController.h */,
+				ACD61EA41DDA0F7C00E30519 /* FVFoldViewController.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -97,6 +105,8 @@
 				AC0AF22A1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m */,
 				ACD61E9D1DD9AFC400E30519 /* FVBounceTransitionAnimtor.h */,
 				ACD61E9E1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m */,
+				ACD61EA61DDA11FD00E30519 /* FVFoldTransitionAnimator.h */,
+				ACD61EA71DDA11FD00E30519 /* FVFoldTransitionAnimator.m */,
 			);
 			path = animators;
 			sourceTree = "<group>";
@@ -230,7 +240,9 @@
 			files = (
 				AC0AF2231DD59C6100B087DA /* FVConfigOption.m in Sources */,
 				AC0AF22E1DD5D2F000B087DA /* FVCofigOptionViewController.m in Sources */,
+				ACD61EA51DDA0F7C00E30519 /* FVFoldViewController.m in Sources */,
 				AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */,
+				ACD61EA81DDA11FD00E30519 /* FVFoldTransitionAnimator.m in Sources */,
 				ACD61E9F1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m in Sources */,
 				AC2EBA651DD559ED0058D302 /* FVAppDelegate.m in Sources */,
 				AC0AF21B1DD5898E00B087DA /* FVBaseTransitionAnimator.m in Sources */,
