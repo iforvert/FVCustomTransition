@@ -32,7 +32,13 @@ Example 2 has all of the characteristics of one example, in addition to the effe
 
 ### Third Example
 
-coding...
+Example 3 Since the time required to display the folding effect differs greatly from the time required for the basic transition, the duration of the animation is separated in Example 3, and the transition time of the entire folding effect can be independently set
+
+<img src = "image/fold.gif" width = 200/>
+
+### Forth Example
+
+Coding.....
 
 ## Requirements
 
