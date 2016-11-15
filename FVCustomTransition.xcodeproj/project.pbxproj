@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC066F841DDB31A50008460A /* FVCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC066F831DDB31A50008460A /* FVCollectionViewController.m */; };
+		AC066F871DDB3B720008460A /* FVDropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC066F861DDB3B720008460A /* FVDropViewController.m */; };
+		AC066F8A1DDB412D0008460A /* FVDropTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC066F891DDB412D0008460A /* FVDropTransitionAnimator.m */; };
 		AC0AF2171DD5884000B087DA /* FVSlideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF2161DD5884000B087DA /* FVSlideViewController.m */; };
 		AC0AF21B1DD5898E00B087DA /* FVBaseTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF21A1DD5898E00B087DA /* FVBaseTransitionAnimator.m */; };
 		AC0AF21E1DD58CDF00B087DA /* FVSlideTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = AC0AF21D1DD58CDF00B087DA /* FVSlideTransitionAnimator.m */; };
@@ -29,6 +32,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC066F821DDB31A50008460A /* FVCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVCollectionViewController.h; sourceTree = "<group>"; };
+		AC066F831DDB31A50008460A /* FVCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVCollectionViewController.m; sourceTree = "<group>"; };
+		AC066F851DDB3B720008460A /* FVDropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVDropViewController.h; sourceTree = "<group>"; };
+		AC066F861DDB3B720008460A /* FVDropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVDropViewController.m; sourceTree = "<group>"; };
+		AC066F881DDB412D0008460A /* FVDropTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVDropTransitionAnimator.h; sourceTree = "<group>"; };
+		AC066F891DDB412D0008460A /* FVDropTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVDropTransitionAnimator.m; sourceTree = "<group>"; };
 		AC0AF2151DD5884000B087DA /* FVSlideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVSlideViewController.h; sourceTree = "<group>"; };
 		AC0AF2161DD5884000B087DA /* FVSlideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FVSlideViewController.m; sourceTree = "<group>"; };
 		AC0AF2191DD5898E00B087DA /* FVBaseTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FVBaseTransitionAnimator.h; sourceTree = "<group>"; };
@@ -90,6 +99,10 @@
 				ACD61E9B1DD9AD3000E30519 /* FVBounceViewController.m */,
 				ACD61EA31DDA0F7C00E30519 /* FVFoldViewController.h */,
 				ACD61EA41DDA0F7C00E30519 /* FVFoldViewController.m */,
+				AC066F821DDB31A50008460A /* FVCollectionViewController.h */,
+				AC066F831DDB31A50008460A /* FVCollectionViewController.m */,
+				AC066F851DDB3B720008460A /* FVDropViewController.h */,
+				AC066F861DDB3B720008460A /* FVDropViewController.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -107,6 +120,8 @@
 				ACD61E9E1DD9AFC400E30519 /* FVBounceTransitionAnimtor.m */,
 				ACD61EA61DDA11FD00E30519 /* FVFoldTransitionAnimator.h */,
 				ACD61EA71DDA11FD00E30519 /* FVFoldTransitionAnimator.m */,
+				AC066F881DDB412D0008460A /* FVDropTransitionAnimator.h */,
+				AC066F891DDB412D0008460A /* FVDropTransitionAnimator.m */,
 			);
 			path = animators;
 			sourceTree = "<group>";
@@ -190,6 +205,7 @@
 		AC2EBA411DD5595D0058D302 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FV;
 				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = iforvert;
 				TargetAttributes = {
@@ -239,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC0AF2231DD59C6100B087DA /* FVConfigOption.m in Sources */,
+				AC066F871DDB3B720008460A /* FVDropViewController.m in Sources */,
 				AC0AF22E1DD5D2F000B087DA /* FVCofigOptionViewController.m in Sources */,
 				ACD61EA51DDA0F7C00E30519 /* FVFoldViewController.m in Sources */,
 				AC0AF2261DD5A65700B087DA /* FVViewController.m in Sources */,
@@ -249,7 +266,9 @@
 				AC53BBB01DD6AB040085FA2D /* FVFromEdgeViewController.m in Sources */,
 				AC0AF2171DD5884000B087DA /* FVSlideViewController.m in Sources */,
 				AC2EBA4E1DD5595D0058D302 /* main.m in Sources */,
+				AC066F841DDB31A50008460A /* FVCollectionViewController.m in Sources */,
 				AC0AF22B1DD5CD2500B087DA /* FVOptionsTransitionAnimator.m in Sources */,
+				AC066F8A1DDB412D0008460A /* FVDropTransitionAnimator.m in Sources */,
 				ACD61E9C1DD9AD3000E30519 /* FVBounceViewController.m in Sources */,
 				AC0AF21E1DD58CDF00B087DA /* FVSlideTransitionAnimator.m in Sources */,
 			);

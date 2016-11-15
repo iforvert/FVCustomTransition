@@ -14,17 +14,21 @@
 #import "FVBounceViewController.h"
 #import "FVBounceViewController.h"
 #import "FVFoldViewController.h"
+#import "FVCollectionViewController.h"
+#import "FVDropViewController.h"
 
 #import "FVSlideTransitionAnimator.h"
 #import "FVOptionsTransitionAnimator.h"
 #import "FVBounceTransitionAnimtor.h"
 #import "FVFoldTransitionAnimator.h"
-
+#import "FVDropTransitionAnimator.h"
 
 typedef NS_ENUM(NSInteger, TableViewSection){
     TableViewSectionBasic,
     TableViewSectionSpring,
     TableViewSectionKeyFrame,
+    TableViewSectionCollection,
+    TableViewSectionDrop,
 };
 
 // Segue ids
@@ -35,7 +39,7 @@ static NSString * const kSegueBouncePush    = @"bouncePush";
 static NSString * const kSegueBounceModal   = @"bounceModal";
 static NSString * const kSegueFoldPush      = @"foldPush";
 static NSString * const kSegueFoldModal     = @"foldModal";
-
+static NSString * const kSegueDropModal     = @"dropModal";
 
 @interface FVViewController ()<UIViewControllerTransitioningDelegate,UINavigationControllerDelegate>
 
@@ -76,6 +80,11 @@ static NSString * const kSegueFoldModal     = @"foldModal";
         self.navigationController.delegate = self;
     }
     else if ([segue.identifier isEqualToString:kSegueFoldModal])
+    {
+        UIViewController *vc = segue.destinationViewController;
+        vc.transitioningDelegate = self;
+    }
+    else if ([segue.identifier isEqualToString:kSegueDropModal])
     {
         UIViewController *vc = segue.destinationViewController;
         vc.transitioningDelegate = self;
@@ -128,8 +137,14 @@ static NSString * const kSegueFoldModal     = @"foldModal";
         animator.duration = option.foldDuration;
         animationController = animator;
     }
-
-
+    // Drop
+    else if ([presented isKindOfClass:[FVDropViewController class]])
+    {
+        FVDropTransitionAnimator *animator = [[FVDropTransitionAnimator alloc] init];
+        animator.appearing = YES;
+        animator.duration = 1.5;
+        animationController = animator;
+    }
     return animationController;
 }
 
@@ -175,6 +190,13 @@ static NSString * const kSegueFoldModal     = @"foldModal";
         FVFoldTransitionAnimator *animator = [[FVFoldTransitionAnimator alloc] init];
         animator.appearing = NO;
         animator.duration = option.foldDuration;
+        animationController = animator;
+    }
+    else if ([dismissed isKindOfClass:[FVDropViewController class]])
+    {
+        FVDropTransitionAnimator *animator = [[FVDropTransitionAnimator alloc] init];
+        animator.duration = 2;
+        animator.appearing = NO;
         animationController = animator;
     }
     
@@ -248,7 +270,6 @@ static NSString * const kSegueFoldModal     = @"foldModal";
         animationController = animator;
     }
     
-    
     return animationController;
 }
 
@@ -278,6 +299,23 @@ static NSString * const kSegueFoldModal     = @"foldModal";
             NSString *identifier = option.pushTransition ? kSegueFoldPush : kSegueFoldModal;
             [self performSegueWithIdentifier:identifier sender:self];
         }
+        case TableViewSectionCollection:
+        {
+            self.navigationController.delegate = nil;
+            UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+            layout.itemSize = CGSizeMake(150.f, 150.f);
+            
+            FVCollectionViewController *vc = [[FVCollectionViewController alloc] initWithCollectionViewLayout:layout];
+            vc.useLayoutToLayoutNavigationTransitions = NO;
+            vc.numberOfItems = 100;
+            [self.navigationController pushViewController:vc animated:YES];
+            break;
+        }
+        case TableViewSectionDrop:
+        {
+            [self performSegueWithIdentifier:kSegueDropModal sender:self];
+            break;
+        }
             
         default:
             break;
@@ -287,9 +325,7 @@ static NSString * const kSegueFoldModal     = @"foldModal";
 #pragma mark - Storyboard unwinding
 
 - (IBAction)unwindToViewController:(UIStoryboardSegue *)sender
-{
-}
-
+{}
 
 - (IBAction)animationOptionsConfig:(UIBarButtonItem *)sender
 {

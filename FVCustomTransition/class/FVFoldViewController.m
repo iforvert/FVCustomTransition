@@ -15,7 +15,8 @@
 
 @implementation FVFoldViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
     self.foldBgClick.userInteractionEnabled = YES;
 }
