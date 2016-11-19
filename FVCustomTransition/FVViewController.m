@@ -87,6 +87,7 @@ static NSString * const kSegueDropModal     = @"dropModal";
     else if ([segue.identifier isEqualToString:kSegueDropModal])
     {
         UIViewController *vc = segue.destinationViewController;
+        vc.modalPresentationStyle = UIModalPresentationCustom;
         vc.transitioningDelegate = self;
     }
     

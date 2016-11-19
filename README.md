@@ -27,7 +27,7 @@ Example 3 Since the time required to display the folding effect differs greatly 
 
 ### Forth Example
 
-Coding.....
+<img src = "image/drop.gif" width = 200/>
 
 ## Requirements
 

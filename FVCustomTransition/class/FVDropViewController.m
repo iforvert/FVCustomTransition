@@ -20,8 +20,8 @@
     
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = self.view.bounds;
-    gradientLayer.colors = @[(id)[UIColor blackColor].CGColor,
-                             (id)[UIColor colorWithRed:0.561 green:0.839 blue:0.922 alpha:1].CGColor];
+    gradientLayer.colors = @[(id)[UIColor purpleColor].CGColor,
+                             (id)[UIColor redColor].CGColor];
     gradientLayer.cornerRadius = 4;
     gradientLayer.masksToBounds = YES;
     [self.view.layer insertSublayer:gradientLayer atIndex:0];
