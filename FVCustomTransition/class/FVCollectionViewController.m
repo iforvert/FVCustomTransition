@@ -73,7 +73,8 @@ static NSUInteger const kMinimumItemSize = 50;
 {
     CGSize itemSize = ((UICollectionViewFlowLayout *)self.collectionViewLayout).itemSize;
     if (itemSize.width - kItemSizeReduction < kMinimumItemSize ||
-        itemSize.height - kItemSizeReduction < kMinimumItemSize) {
+        itemSize.height - kItemSizeReduction < kMinimumItemSize)
+    {
         return NO;
     }
     return YES;

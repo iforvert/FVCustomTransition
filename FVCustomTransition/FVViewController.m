@@ -47,7 +47,8 @@ static NSString * const kSegueDropModal     = @"dropModal";
 
 @implementation FVViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+{
     [super viewDidLoad];
 }
 
@@ -58,7 +59,6 @@ static NSString * const kSegueDropModal     = @"dropModal";
     {
         UIViewController *vc = segue.destinationViewController;
         vc.transitioningDelegate = self;
-        
     }
     else if ([segue.identifier isEqualToString:kSegueSlidPush])
     {
@@ -90,7 +90,6 @@ static NSString * const kSegueDropModal     = @"dropModal";
         vc.modalPresentationStyle = UIModalPresentationCustom;
         vc.transitioningDelegate = self;
     }
-    
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate
@@ -174,7 +173,6 @@ static NSString * const kSegueDropModal     = @"dropModal";
             animator.duration = option.duration;
             animationController = animator;
         }
-    
     }
     else if ([dismissed isKindOfClass:[FVBounceViewController class]])
     {
@@ -200,7 +198,6 @@ static NSString * const kSegueDropModal     = @"dropModal";
         animator.appearing = NO;
         animationController = animator;
     }
-    
     return animationController;
 }
 
@@ -241,7 +238,6 @@ static NSString * const kSegueDropModal     = @"dropModal";
         animator.edge = option.edge;
         animator.dampingRatio = option.dampingRatio;
         animator.velocity = option.velocity;
-        
         animationController = animator;
     }
     // Bounce Pop
@@ -270,7 +266,6 @@ static NSString * const kSegueDropModal     = @"dropModal";
         animator.duration = option.foldDuration;
         animationController = animator;
     }
-    
     return animationController;
 }
 
@@ -281,9 +276,8 @@ static NSString * const kSegueDropModal     = @"dropModal";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     FVConfigOption *option = [FVConfigOption sharedConfigOptions];
-    
-    switch (indexPath.section) {
-            
+    switch (indexPath.section)
+    {
         case TableViewSectionBasic:
         {
             NSString *identifier = option.pushTransition ? kSegueSlidPush : kSegueSlidModal;
@@ -294,18 +288,19 @@ static NSString * const kSegueDropModal     = @"dropModal";
         {
             NSString *identifier = option.pushTransition ? kSegueBouncePush : kSegueBounceModal;
             [self performSegueWithIdentifier:identifier sender:self];
+            break;
         }
         case TableViewSectionKeyFrame:
         {
             NSString *identifier = option.pushTransition ? kSegueFoldPush : kSegueFoldModal;
             [self performSegueWithIdentifier:identifier sender:self];
+            break;
         }
         case TableViewSectionCollection:
         {
             self.navigationController.delegate = nil;
             UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
             layout.itemSize = CGSizeMake(150.f, 150.f);
-            
             FVCollectionViewController *vc = [[FVCollectionViewController alloc] initWithCollectionViewLayout:layout];
             vc.useLayoutToLayoutNavigationTransitions = NO;
             vc.numberOfItems = 100;
@@ -317,7 +312,6 @@ static NSString * const kSegueDropModal     = @"dropModal";
             [self performSegueWithIdentifier:kSegueDropModal sender:self];
             break;
         }
-            
         default:
             break;
     }
